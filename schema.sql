@@ -60,7 +60,8 @@ CREATE TABLE playlists (
 CREATE TABLE playlists_songs (
     playlist_song_id SERIAL PRIMARY KEY,
     playlist_id INTEGER REFERENCES playlists(playlist_id),
-    song_id INTEGER REFERENCES songs(song_id)
+    song_id INTEGER REFERENCES songs(song_id),
+    UNIQUE (playlist_id, song_id)
 );
 
 
